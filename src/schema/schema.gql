@@ -1,0 +1,22 @@
+type CreateDogResponse {
+  breed: String!
+  id: ID!
+  name: String!
+}
+
+input DogObjectInput {
+  breed: String!
+  id: Int
+  name: String!
+}
+
+type Mutation {
+  createDog(input: DogObjectInput!): CreateDogResponse!
+  removeDog(id: Int!): CreateDogResponse!
+  updateDog(input: DogObjectInput!): CreateDogResponse!
+}
+
+type Query {
+  getDog(id: Int!): CreateDogResponse!
+  getDogs: [CreateDogResponse!]!
+}
